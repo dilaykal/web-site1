@@ -14,7 +14,9 @@
 }
 /* ilk div  stilleri */
 .arka{
-    background-color:rgba(252, 204, 204, 0.955);
+    background-image:url("../resimler/pembe.jpg");
+    background-size: cover;
+    height: 100%;
 }
 #st1div1{
     /* background-color:rgba(255,0,0,0.1); */
