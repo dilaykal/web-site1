@@ -1,4 +1,4 @@
-
+/* menu stil */
 .nav-item a{
     color:#efecf3;
     font-weight:bold;
@@ -12,6 +12,7 @@
     margin: 0 20px;
     color:#efefef;
 }
+/* ilk div  stilleri */
 #st1div1{
     background-color:rgba(255,0,0,0.1);
     height: 700px;
@@ -24,3 +25,44 @@
     border-top-right-radius: 25px;
     margin-left: 4px;
 }
+/* ikinci div stilleri */
+#giris{
+    font-family: sans-serif;
+    font-size:20px;
+    color: white;
+    padding-top: 2px;
+}
+.girisbtn {
+    background-color:rgba(252, 204, 204, 0.955);
+    border: none;
+    color: rgb(205, 7, 7);
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 12px;
+}
+.girisbtn:hover{
+    background-color: rgb(205, 7, 7);
+    border:2px double rgba(252, 204, 204, 0.955);
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 12px;
+    color:rgba(252, 204, 204, 0.955) ;
+}
+/* icerik kısmı */
+.icerikler{
+    background-color:rgba(252, 204, 204, 0.955) ;
+}
+.icerikprgrf{
+    color: white;
+    font-size: 18px;
+    margin-top: 2px;
+}
+.icerikh{
+    color:whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.resim:hover{
+    width:200px;
+    border:#c51111 2px solid ;
+}
+/* footer */
