@@ -13,8 +13,11 @@
     color:#efefef;
 }
 /* ilk div  stilleri */
+.arka{
+    background-color:rgba(252, 204, 204, 0.955);
+}
 #st1div1{
-    background-color:rgba(255,0,0,0.1);
+    /* background-color:rgba(255,0,0,0.1); */
     height: 700px;
     padding-top: 63px;
 }
@@ -66,3 +69,6 @@
     border:#c51111 2px solid ;
 }
 /* footer */
+.footer{
+    height:180px;
+}
