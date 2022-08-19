@@ -75,16 +75,11 @@
     height:90px;
 }
 /* ********************************************************* */
-<<<<<<< HEAD
 /* şehrim sayfası */
 .tanitim{
     border:1px solid red; 
-    width:300px; 
     text-align: justify; 
-    margin-left: 130px; 
-    width: auto; 
-    margin-top: 50px;
+    margin-left: 130px;  
+    margin-top: 50px;   
 }
-=======
 /* özgeçmiş sayfası */
->>>>>>> e05705a2c3b3bdbf3a1cc0d8fe59606a4d7c4c85
