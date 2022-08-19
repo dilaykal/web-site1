@@ -8,4 +8,5 @@
         echo"Bilgilerinizi Kontrol Edip Tekrar Giriş Yapın.<br>
         Eksik Bilgi Girdiniz...";
         }
+        echo "<p> <a href='login.html'>&lt;GERİ DÖN&gt;</a></p> ";
 ?>
