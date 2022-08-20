@@ -12,6 +12,121 @@
         <link rel="stylesheet" href="./stil/style.css"/>
     </head>
     <body class="gövde">
+        <script>
+            // function myFunction2() {
+            //      var x = document.forms["myform"];
+            //      var text = "";
+            //      var i;
+            //      for (i = 0; i < x.length; i++) {
+            //      text += x.elements[i].value + "<br>";
+            //      }
+            //      document.getElementById("demo2").innerHTML = text;
+            // }
+            // function validateForm() {
+            //     var x = document.forms["myform"]["ad"].value;
+            //     if (x == null || x == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var y = document.forms["myform"]["soyad"].value;
+            //     if (y == null || y == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var a = document.forms["myform"]["eposta"].value;
+            //     if (a == null || a == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var b = document.forms["myform"]["cins"].value;
+            //     if (b == null || b == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var c = document.forms["myform"]["sehir"].value;
+            //     if (c == null || c == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var d = document.forms["myform"]["birthday"].value;
+            //     if (d == null || d == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var e = document.forms["myform"]["yas"].value;
+            //     if (e == null || e == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var f = document.forms["myform"]["phone"].value;
+            //     if (f == null || f == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var g = document.forms["myform"]["uyg1"].value;
+            //     if (g == null || g == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var h = document.forms["myform"]["uyg2"].value;
+            //     if (h == null || h == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var i = document.forms["myform"]["uyg3"].value;
+            //     if (i == null || i == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var j = document.forms["myform"]["uyg4"].value;
+            //     if (j == null || j == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var k = document.forms["myform"]["konu"].value;
+            //     if (k == null || k == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            //     var m = document.forms["myform"]["mesaj"].value;
+            //     if (m == null || m == "") {
+            //         alert("Lütfen bütün alanları doldurunuz");
+            //         return false;
+            //     }
+            // }
+            //  function checkEmail() {
+            //     var email = document.getElementById('posta');
+            //     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            //     if (!filter.test(email.value)) {
+            //     alert('Please provide a valid email address');
+            //     email.focus;
+            //     return false;
+            //     }
+            // }
+            function kontrol(){
+                var isim = document.forms["Form"]["ad"].value;
+                var soyisim = document.forms["Form"]["soyad"].value;
+                var email = document.forms["Form"]["eposta"].value;
+                var cinsiyet = document.forms["Form"]["cins"].value;
+                var secim = document.forms["Form"]["secim[]"].value;
+                // var sehir = document.forms["Form"]["sehir"].value;
+                var konu = document.forms["Form"]["konu"].value;
+                var mesaj = document.forms["Form"]["mesaj"].value;
+                var atpos = email.indexOf("@");
+		        var dotpos = email.lastIndexOf(".");
+                if (isim == null || isim == "", soyisim == null || soyisim == "", email == null || email == "", mesaj == null ||
+                    mesaj == "", cinsiyet == null || cinsiyet == "", konu == null || konu == "", secim == null || secim == "") {
+                    alert("Tüm alanlar dolu olmalıdır!");
+                    return false;
+                } else if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+                    alert("Lütfen geçerli bir mail adresi girin...");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        </script>
         <!-- menü oluşturma -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-danger  fixed-top ">
             <div class="container py-1">
@@ -54,7 +169,7 @@
           
         </nav>
         <div class="container">
-            <form id="contact" action="" method="">
+            <form id="contact" name="myform" onsubmit="return kontrol()" action="iletisim.php" method="POST">
                 <h2>İletişim Sayfası</h2>
 
                 <!-- isim soyisim -->
@@ -67,7 +182,7 @@
 
                 <!-- mail -->
                 <div class="form-control">
-                    <input  type="text" placeholder="E-Posta Adresiniz" name="eposta">
+                    <input  type="text" placeholder="E-Posta Adresiniz" id="posta" name="eposta">
                 </div>
 
                 <!-- cinsiyet -->
@@ -80,7 +195,7 @@
                 </div>
 
                 <!-- şehir -->
-                <div class="form-control">
+                <!-- <div class="form-control">
                     <label>Yaşadığınız Şehir: </label>
                         <select name="sehir">
                             <option value="1">Adana</option>
@@ -165,56 +280,35 @@
                             <option value="80">Osmaniye</option>
                             <option value="81">Düzce</option>
                         </select>
-                </div>
-
-                <!-- doğum tarihi -->
-                <div class="form-control">
-                    <label for="birthday">Doğum Tarihiniz:</label>
-                    <input type="date" id="birthday" name="birthday">
-                </div>
-
-                <!-- yaş -->
-                <div class="form-control">
-                    <label for="yas">Yaşınız:</label>
-                    <input type="number" id="yas" name="yas" min="1" max="150">
-                </div>
-
-                <!-- telefon numarası -->
-                <div class="form-control">
-                    <label for="phone">Telefon numaranız:</label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-                </div>
+                </div> -->
 
                 <!-- seçim -->
                 <div class="form-control">
-                    <p>Lütfen hesabınınz bulunan uygulamaları seçiniz</p>
-                    <input type="checkbox" id="uyg1" name="uyg1" value="Facebook">
-                    <label for="uyg1">Facebook</label><br>
-                    <input type="checkbox" id="uyg2" name="uyg2" value="Twitter">
-                    <label for="uyg2">Twitter</label><br>
-                    <input type="checkbox" id="uyg3" name="uyg3" value="İnstagram">
-                    <label for="uyg3">İnstagram</label><br><br>
-                    <input type="checkbox" id="uyg4" name="uyg4" value="Spotify">
-                    <label for="uyg4">Spotify</label><br><br>
-                    <input type="checkbox" id="uyg5" name="uyg5" value="Youtube">
-                    <label for="uyg5">Youtube</label><br><br>
+                    <label for="konu">İletişim sebebinizi belirtiniz </label>
+						<select id="konu" name="konu">
+							<option value=""></option>
+							<option value="İstek">İstek</option>
+							<option value="Öneri">Öneri</option>
+							<option value="Şikayet">Şikayet</option>
+							<option value="Diğer">Diğer</option>
+						</select>
                 </div>
-
                 <!-- mesaj -->
                 <div class="form-control">
-                    <input type="text" placeholder="Konu" name="konu">
-                </div>
-                <div class="form-control">
-                    <textarea placeholder="Lütfen Mesajınızı Buraya Yazın.." ></textarea>
+                    <textarea placeholder="Lütfen Mesajınızı Buraya Yazın.." name="mesaj"></textarea>
                 </div>
 
                 <!-- butonlar -->
                 <div class="form-control">
-                    <button class="iletisim-btn" name="submit" type="submit" id="submit">GÖNDER</button>
+                    <button class="iletisim-btn" name="submit" type="submit" id="submit" >GÖNDER</button>
                 </div>
                 <div class="form-control">
                     <button class="iletisim-btn" name="sil" type="reset" id="submit">Temizle</button>
                 </div>
+                <!-- <div class="form-control">
+                    <p id="demo2">İçerikler buraya gelecek.</p>
+                    <button type="button" onclick="myFunction2()">Getir</button>
+                </div> -->
             </form>
         </div>
     </body>
