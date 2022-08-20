@@ -12,8 +12,49 @@
         <link rel="stylesheet" href="./stil/style.css"/>
     </head>
     <body>
-    <div  id="form">
-        <table class="table container " id="myform">
+        <!-- menü oluşturma -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger  fixed-top ">
+            <div class="container py-1">
+                <!-- logo yerleştirildi -->
+                <a href="" class="navbar-brand">Blog Sayfası</a>
+
+                <!-- küçük ekranlar için buton koyuldu -->
+                <button type="button" class="navbar-toggler"  data-toggle="collapse" data-target="#mynav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Linkler -->
+                <div class=" container collapse navbar-collapse justify-content-end" id="mynav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item d-flex ">
+                        <a class="nav-link active" href="anasayfa.html" target="_blank">Hakkımda</a>
+                        </li>
+                        <li class="nav-item d-flex px-2">
+                        <a class="nav-link" href="ozgecmis.html" target="_blank">Özgeçmiş</a>
+                        </li>
+                        <li class="nav-item d-flex px-2">
+                        <a class="nav-link" href="sehrim.html" target="_blank">Şehrim</a>
+                        </li>
+                        <li class="nav-item d-flex px-2">
+                            <a class="nav-link" href="takımımız.html" target="_blank">Takımımız</a>
+                        </li>
+                        <li class="nav-item d-flex px-2">
+                            <a class="nav-link" href="ilgialanlarım.html" target="_blank">İlgi Alanlarım</a>
+                        </li>
+                        <li class="nav-item d-flex px-2">
+                            <a class="nav-link" href="login.html" target="_blank">Login</a>
+                        </li>
+                        <li class="nav-item d-flex">
+                            <a class="nav-link" href="iletisim.html" target="_blank">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+            
+            </div>
+          
+        </nav>
+        <div  id="form">
+            <table class="table container " id="myform">
                 <thead>
                     <tr>
                         <th>Bilgiler</th>
@@ -29,7 +70,7 @@
                         <th>Soyisim</th>
                         <td><?php echo $_POST["soyad"]?></td>
                     </tr>
-                    <tr>
+                    <tr>                            
                         <th>Email</th>
                         <td><?php echo $_POST["eposta"]?></td>
                     </tr>
@@ -47,6 +88,23 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <!-- footer -->
+        <div class=" bg-danger footer">
+            <div class="isaret">
+                <a href="https://www.instagram.com/accounts/onetap/?next=%2F" target="_blank"><i class="fab fa-instagram"></i></a> 
+                <a href="https://github.com/dilaykal" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="anasayfa.html" target="_blank">Ana sayfa</a></li>
+                <li class="list-inline-item"><a href="ozgecmis.html" target="_blank">Özgeçmiş</a></li>
+                <li class="list-inline-item"><a href="ilgialanlarım.html" target="_blank">İlgi Alanlarım</a></li>
+                <li class="list-inline-item"><a href="sehir.html" target="_blank">Şehir</a></li>
+                <li class="list-inline-item"><a href="takımımız.html" target="_blank">Takımımız</a></li>
+                <li class="list-inline-item"><a href="iletisim.html" target="_blank">İletişim</a></li>
+                <li class="list-inline-item"><a href="login.html" target="_blank">Login</a></li>
+            </ul>
+            <p class="copyright">Dilay KAL © 2022</p>
         </div>
     </body>
 </html>
