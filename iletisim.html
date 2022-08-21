@@ -104,25 +104,29 @@
             //     return false;
             //     }
             // }
+            function kontrolet(){
+                var mail = document.getElementById("eposta").value;
+                var regex = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+.)+([.])+[a-zA-Z0-9.-]{2,4}$/;
+                if (regex.test(mail)==true)
+                {alert("Mail adresi geçerli");}
+                else
+                {alert("Hata geçersiz mail adresi girdiniz!");}
+            }
             function kontrol(){
                 var isim = document.forms["Form"]["ad"].value;
                 var soyisim = document.forms["Form"]["soyad"].value;
-                var email = document.forms["Form"]["eposta"].value;
+                var eposta = document.forms["Form"]["eposta"].value;
                 var cinsiyet = document.forms["Form"]["cins"].value;
                 var secim = document.forms["Form"]["secim[]"].value;
                 // var sehir = document.forms["Form"]["sehir"].value;
                 var konu = document.forms["Form"]["konu"].value;
                 var mesaj = document.forms["Form"]["mesaj"].value;
-                var atpos = email.indexOf("@");
-		        var dotpos = email.lastIndexOf(".");
-                if (isim == null || isim == "", soyisim == null || soyisim == "", email == null || email == "", mesaj == null ||
+                if (isim == null || isim == "", soyisim == null || soyisim == "", eposta == null || eposta == "", mesaj == null ||
                     mesaj == "", cinsiyet == null || cinsiyet == "", konu == null || konu == "", secim == null || secim == "") {
                     alert("Tüm alanlar dolu olmalıdır!");
                     return false;
-                } else if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
-                    alert("Lütfen geçerli bir mail adresi girin...");
-                    return false;
-                } else {
+                } 
+                else {
                     return true;
                 }
             }
@@ -300,7 +304,7 @@
 
                 <!-- butonlar -->
                 <div class="form-control">
-                    <button class="iletisim-btn" name="submit" type="submit" id="submit" >GÖNDER</button>
+                    <button class="iletisim-btn" name="submit" type="submit" id="submit" onclick="kontrolet();" >GÖNDER</button>
                 </div>
                 <div class="form-control">
                     <button class="iletisim-btn" name="sil" type="reset" id="submit">Temizle</button>

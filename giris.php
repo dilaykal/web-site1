@@ -62,7 +62,7 @@
                         }
                         else{
                             echo "Girdiğiniz e-posta veya şifre hatalı.";
-                            header("refresh:3; giriş.html");
+                            header("refresh:3; giris.html");
                         }
                     } 
                     else{ 
