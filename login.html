@@ -12,10 +12,34 @@
         <link rel="stylesheet" href="./stil/style.css"/>
     </head>
     <body>
+        <script>
+            function controlMail(posta,sfr){
+                if((posta=="b201210006@sakarya.edu.tr") && (sfr=="b201210006")){
+                    return true;
+                }
+            }
+            function control(){
+                var myform = document.forms["form1"];
+                var mail = myform["mail"].value;
+                var sifre = myform["sifre"].value;
+
+                if (mail && sifre) {
+                    if (controlMail(mail,sifre)) {
+                        return true;
+                    } else {
+                        alert("Yanlış kullanıcı adı veya şifre girdiniz")
+                        return false;
+                    }
+                } else {
+                    alert("Lütfen tüm alanları doldurunuz");
+                    return false;
+                }
+            }
+        </script>
         <!-- login sayfası -->
         <div class="loginform">
             <h1>Giriş Sayfası</h1>
-            <form action="giris.php" method="POST">
+            <form name="form1" action="giris.php" method="POST" onsubmit="return control()">
                 <input type="text" placeholder="Mail Adresiniz" class="txt" name="mail">
                 <input type="password" placeholder="Şifre" class="txt" name="sifre">
                 <input class="login-btn" type="submit" value="Giriş Yap">

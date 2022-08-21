@@ -13,121 +13,33 @@
     </head>
     <body class="gövde">
         <script>
-            // function myFunction2() {
-            //      var x = document.forms["myform"];
-            //      var text = "";
-            //      var i;
-            //      for (i = 0; i < x.length; i++) {
-            //      text += x.elements[i].value + "<br>";
-            //      }
-            //      document.getElementById("demo2").innerHTML = text;
-            // }
-            // function validateForm() {
-            //     var x = document.forms["myform"]["ad"].value;
-            //     if (x == null || x == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var y = document.forms["myform"]["soyad"].value;
-            //     if (y == null || y == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var a = document.forms["myform"]["eposta"].value;
-            //     if (a == null || a == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var b = document.forms["myform"]["cins"].value;
-            //     if (b == null || b == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var c = document.forms["myform"]["sehir"].value;
-            //     if (c == null || c == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var d = document.forms["myform"]["birthday"].value;
-            //     if (d == null || d == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var e = document.forms["myform"]["yas"].value;
-            //     if (e == null || e == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var f = document.forms["myform"]["phone"].value;
-            //     if (f == null || f == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var g = document.forms["myform"]["uyg1"].value;
-            //     if (g == null || g == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var h = document.forms["myform"]["uyg2"].value;
-            //     if (h == null || h == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var i = document.forms["myform"]["uyg3"].value;
-            //     if (i == null || i == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var j = document.forms["myform"]["uyg4"].value;
-            //     if (j == null || j == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var k = document.forms["myform"]["konu"].value;
-            //     if (k == null || k == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            //     var m = document.forms["myform"]["mesaj"].value;
-            //     if (m == null || m == "") {
-            //         alert("Lütfen bütün alanları doldurunuz");
-            //         return false;
-            //     }
-            // }
-            //  function checkEmail() {
-            //     var email = document.getElementById('posta');
-            //     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-            //     if (!filter.test(email.value)) {
-            //     alert('Please provide a valid email address');
-            //     email.focus;
-            //     return false;
-            //     }
-            // }
-            function kontrolet(){
-                var mail = document.getElementById("eposta").value;
+            function kontrolMail(mail){
+                console.log(mail);
                 var regex = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+.)+([.])+[a-zA-Z0-9.-]{2,4}$/;
-                if (regex.test(mail)==true)
-                {alert("Mail adresi geçerli");}
-                else
-                {alert("Hata geçersiz mail adresi girdiniz!");}
+                return regex.test(mail);
             }
+
             function kontrol(){
-                var isim = document.forms["Form"]["ad"].value;
-                var soyisim = document.forms["Form"]["soyad"].value;
-                var eposta = document.forms["Form"]["eposta"].value;
-                var cinsiyet = document.forms["Form"]["cins"].value;
-                var secim = document.forms["Form"]["secim[]"].value;
-                // var sehir = document.forms["Form"]["sehir"].value;
-                var konu = document.forms["Form"]["konu"].value;
-                var mesaj = document.forms["Form"]["mesaj"].value;
-                if (isim == null || isim == "", soyisim == null || soyisim == "", eposta == null || eposta == "", mesaj == null ||
-                    mesaj == "", cinsiyet == null || cinsiyet == "", konu == null || konu == "", secim == null || secim == "") {
-                    alert("Tüm alanlar dolu olmalıdır!");
+                var myForm = document.forms["myform"];
+                myForm["soyad"].value;
+                var isim = myForm["ad"].value;
+                var soyisim = myForm["soyad"].value;
+                var eposta = myForm["eposta"].value;
+                var cinsiyet = myForm["cins"].value;
+                var konu = myForm["konu"].value;
+                var mesaj = myForm["mesaj"].value;
+
+                if (isim && eposta && soyisim && cinsiyet && konu && mesaj) {
+                    if (kontrolMail(eposta)) {
+                        alert("mail ok ")
+                        return true;
+                    } else {
+                        alert("Yanlış mail formatında girdiniz")
+                        return false;
+                    }
+                } else {
+                    alert("Lütfen tüm alanları doldurunuz");
                     return false;
-                } 
-                else {
-                    return true;
                 }
             }
         </script>
@@ -173,7 +85,7 @@
           
         </nav>
         <div class="container">
-            <form id="contact" name="myform" onsubmit="return kontrol()" action="iletisim.php" method="POST">
+            <form id="contact" name="myform" onsubmit="return kontrol()" action="iletisim.php"  method="POST">
                 <h2>İletişim Sayfası</h2>
 
                 <!-- isim soyisim -->
@@ -191,100 +103,12 @@
 
                 <!-- cinsiyet -->
                 <div class="form-control">
-                    <p>Cisiyetiniz:</p>
-                    <input type="radio" id="kadın"  name="cins" value="Kadın">
+                    <p>Cinsiyetiniz:</p>
+                    <input type="radio" id="kadın" checked  name="cins" value="Kadın">
                     <label for="kadın">Kadın</label><br>
                     <input type="radio" id="erkek" name="cins" value="Erkek">
                     <label for="erkek">Erkek</label><br>
                 </div>
-
-                <!-- şehir -->
-                <!-- <div class="form-control">
-                    <label>Yaşadığınız Şehir: </label>
-                        <select name="sehir">
-                            <option value="1">Adana</option>
-                            <option value="2">Adıyaman</option>
-                            <option value="3">Afyonkarahisar</option>
-                            <option value="4">Ağrı</option>
-                            <option value="5">Amasya</option>
-                            <option value="6">Ankara</option>
-                            <option value="7">Antalya</option>
-                            <option value="8">Artvin</option>
-                            <option value="9">Aydın</option>
-                            <option value="10">Balıkesir</option>
-                            <option value="11">Bilecik</option>
-                            <option value="12">Bingöl</option>
-                            <option value="13">Bitlis</option>
-                            <option value="14">Bolu</option>
-                            <option value="15">Burdur</option>
-                            <option value="16">Bursa</option>
-                            <option value="17">Çanakkale</option>
-                            <option value="18">Çankırı</option>
-                            <option value="19">Çorum</option>
-                            <option value="20">Denizli</option>
-                            <option value="21">Diyarbakır</option>
-                            <option value="22">Edirne</option>
-                            <option value="23">Elazığ</option>
-                            <option value="24">Erzincan</option>
-                            <option value="25">Erzurum</option>
-                            <option value="26">Eskişehir</option>
-                            <option value="27">Gaziantep</option>
-                            <option value="28">Giresun</option>
-                            <option value="29">Gümüşhane</option>
-                            <option value="30">Hakkari</option>
-                            <option value="31">Hatay</option>
-                            <option value="32">Isparta</option>
-                            <option value="33">Mersin</option>
-                            <option value="34">İstanbul</option>
-                            <option value="35">İzmir</option>
-                            <option value="36">Kars</option>
-                            <option value="37">Kastamonu</option>
-                            <option value="38">Kayseri</option>
-                            <option value="39">Kırklareli</option>
-                            <option value="40">Kırşehir</option>
-                            <option value="41">Kocaeli</option>
-                            <option value="42">Konya</option>
-                            <option value="43">Kütahya</option>
-                            <option value="44">Malatya</option>
-                            <option value="45">Manisa</option>
-                            <option value="46">Kahramanmaraş</option>
-                            <option value="47">Mardin</option>
-                            <option value="48">Muğla</option>
-                            <option value="49">Muş</option>
-                            <option value="50">Nevşehir</option>
-                            <option value="51">Niğde</option>
-                            <option value="52">Ordu</option>
-                            <option value="53">Rize</option>
-                            <option value="54">Sakarya</option>
-                            <option value="55">Samsun</option>
-                            <option value="56">Siirt</option>
-                            <option value="57">Sinop</option>
-                            <option value="58">Sivas</option>
-                            <option value="59">Tekirdağ</option>
-                            <option value="60">Tokat</option>
-                            <option value="61">Trabzon</option>
-                            <option value="62">Tunceli</option>
-                            <option value="63">Şanlıurfa</option>
-                            <option value="64">Uşak</option>
-                            <option value="65">Van</option>
-                            <option value="66">Yozgat</option>
-                            <option value="67">Zonguldak</option>
-                            <option value="68">Aksaray</option>
-                            <option value="69">Bayburt</option>
-                            <option value="70">Karaman</option>
-                            <option value="71">Kırıkkale</option>
-                            <option value="72">Batman</option>
-                            <option value="73">Şırnak</option>
-                            <option value="74">Bartın</option>
-                            <option value="75">Ardahan</option>
-                            <option value="76">Iğdır</option>
-                            <option value="77">Yalova</option>
-                            <option value="78">Karabük</option>
-                            <option value="79">Kilis</option>
-                            <option value="80">Osmaniye</option>
-                            <option value="81">Düzce</option>
-                        </select>
-                </div> -->
 
                 <!-- seçim -->
                 <div class="form-control">
@@ -297,6 +121,7 @@
 							<option value="Diğer">Diğer</option>
 						</select>
                 </div>
+
                 <!-- mesaj -->
                 <div class="form-control">
                     <textarea placeholder="Lütfen Mesajınızı Buraya Yazın.." name="mesaj"></textarea>
@@ -304,15 +129,11 @@
 
                 <!-- butonlar -->
                 <div class="form-control">
-                    <button class="iletisim-btn" name="submit" type="submit" id="submit" onclick="kontrolet();" >GÖNDER</button>
+                    <button class="iletisim-btn" name="submit" type="submit" id="submit" >GÖNDER</button>
                 </div>
                 <div class="form-control">
-                    <button class="iletisim-btn" name="sil" type="reset" id="submit">Temizle</button>
+                    <button class="iletisim-btn" name="sil" type="reset" id="reset">Temizle</button>
                 </div>
-                <!-- <div class="form-control">
-                    <p id="demo2">İçerikler buraya gelecek.</p>
-                    <button type="button" onclick="myFunction2()">Getir</button>
-                </div> -->
             </form>
         </div>
         <!-- footer -->

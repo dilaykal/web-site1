@@ -54,20 +54,9 @@
         <div class="arka " style="color:black; margin-top:63px;">
             <div class="row">
                 <div class="col-md-12" style="padding-top: 250px; text-align:center; height: 800px; ">
-                    <?php 
-                    if (isset($_POST['mail'], $_POST['sifre'] ) && ($_POST['mail']!='') && ($_POST['sifre']!='')) {
-                        if($_POST["mail"]=="dilaykal@sakarya.edu.tr" && $_POST["sifre"]=="b201210006"){
-                            echo"Hoşgeldiniz ".$_POST["mail"];
-                            echo"<br>Girişiniz onaylandı.";
-                        }
-                        else{
-                            echo "Girdiğiniz e-posta veya şifre hatalı.";
-                            header("refresh:3; giris.html");
-                        }
-                    } 
-                    else{ 
-                        echo "Bütün alanlar doldurulmak zorundadır";
-                    }
+                    <?php
+                        echo"<br>Girişiniz onaylandı."."<br>";
+                        echo"Hoşgeldiniz ".$_POST["sifre"];
                     ?>
                 </div>
             </div>
