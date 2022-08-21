@@ -31,7 +31,6 @@
 
                 if (isim && eposta && soyisim && cinsiyet && konu && mesaj) {
                     if (kontrolMail(eposta)) {
-                        alert("mail ok ")
                         return true;
                     } else {
                         alert("Yanlış mail formatında girdiniz")
@@ -104,7 +103,7 @@
                 <!-- cinsiyet -->
                 <div class="form-control">
                     <p>Cinsiyetiniz:</p>
-                    <input type="radio" id="kadın" checked  name="cins" value="Kadın">
+                    <input type="radio" id="kadın" name="cins" value="Kadın">
                     <label for="kadın">Kadın</label><br>
                     <input type="radio" id="erkek" name="cins" value="Erkek">
                     <label for="erkek">Erkek</label><br>
