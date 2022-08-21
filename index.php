@@ -1,3 +1,3 @@
 <?php
-    header( 'Location:/anasayfa.html'); 
+    header( 'Location:/login.html'); 
 ?>
