@@ -27,7 +27,7 @@
                 <div class=" container collapse navbar-collapse justify-content-end" id="mynav">
                     <ul class="navbar-nav">
                         <li class="nav-item d-flex ">
-                        <a class="nav-link active" href="anasayfa.html" target="_blank">Hakkımda</a>
+                        <a class="nav-link" href="anasayfa.html" target="_blank">Hakkımda</a>
                         </li>
                         <li class="nav-item d-flex px-2">
                         <a class="nav-link" href="ozgecmis.html" target="_blank">Özgeçmiş</a>
